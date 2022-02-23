@@ -174,14 +174,15 @@
 
       {% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
 
-      {% if FORMSPREE_EMAIL %}
-      <form class="row gap-y" action="https://formspree.io/{{ FORMSPREE_EMAIL }}"
+      {% if NEWSLETTER_FORM_URL %}
+      {% if NEWSLETTER_FORM_TEXT %}<p>{{ NEWSLETTER_FORM_TEXT }}</p>{% endif %}
+      <form class="row gap-y" action="{{NEWSLETTER_FORM_URL}}"
             method="POST">
         <input
                 class=""
                 type="text"
                 name="_replyto"
-                placeholder="Newsletter signup"
+                placeholder="Your email"
                 id="email">
         <button class="btn" type="submit" value="Send">
           Sign up!
